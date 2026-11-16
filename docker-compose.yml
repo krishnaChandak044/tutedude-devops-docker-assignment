@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    image: ${DOCKERHUB_USER:-your-dockerhub-user}/tutedude-flask-backend:1.0
+    restart: unless-stopped
+    networks: [app-net]
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/api/ready')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+  frontend:
+    build: ./frontend
+    image: ${DOCKERHUB_USER:-your-dockerhub-user}/tutedude-node-frontend:1.0
+    restart: unless-stopped
+    environment: {PORT: "3000", API_URL: "http://backend:5000"}
+    ports: ["3000:3000"]
+    depends_on:
+      backend: {condition: service_healthy}
+    networks: [app-net]
+networks:
+  app-net: {driver: bridge}
