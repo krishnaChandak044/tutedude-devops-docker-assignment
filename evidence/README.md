@@ -1,8 +1,16 @@
-# Submission evidence checklist
+# Submission evidence
 
-- Browser screenshot showing the frontend and successful Flask response.
-- Terminal screenshot showing `docker compose ps`, build output, and service logs.
-- Docker Hub image tags: `krishna04chandak/tutedude-node-frontend:1.0` and `krishna04chandak/tutedude-flask-backend:1.0`.
-- GitHub repository URL in the report or README.
+The Word report embeds genuine runtime captures of:
 
-Do not include Docker Hub credentials or access tokens.
+- The Node.js/Express frontend at `127.0.0.1:3000`.
+- The proxied Flask health response at `/api/health`.
+- Both Compose services running, including the healthy backend and published image names.
+
+Published Docker Hub tags:
+
+- `krishna04chandak/tutedude-node-frontend:1.0`
+- `krishna04chandak/tutedude-flask-backend:1.0`
+
+GitHub repository: https://github.com/krishnaChandak044/tutedude-devops-docker-assignment
+
+No passwords or access tokens are included.
