@@ -10,4 +10,4 @@ A Node.js/Express frontend and Python/Flask backend run in separate containers o
 5. Inspect with `docker compose ps` and `docker compose logs --tail=50`. Stop with `docker compose down`.
 
 ## Publish images
-After signing in to Docker Hub, set `DOCKERHUB_USER`, run `docker login`, then `docker compose build` and `docker compose push`. This tags `tutedude-node-frontend:1.0` and `tutedude-flask-backend:1.0`. GitHub and Docker Hub publication needs your accounts; no credentials are included. The `evidence/` folder lists genuine runtime screenshots to add before portal submission.
+After signing in to Docker Hub, set `DOCKERHUB_USER`, run `docker login`, then `docker compose build` and `docker compose push`. This tags `tutedude-node-frontend:1.0` and `tutedude-flask-backend:1.0`. GitHub repository: https://github.com/krishnaChandak044/tutedude-devops-docker-assignment. Docker Hub publication still requires your Docker Hub account; no credentials are included. The `evidence/` folder lists genuine runtime screenshots to add before portal submission.
